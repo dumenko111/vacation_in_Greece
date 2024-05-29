@@ -1,0 +1,78 @@
+/*------PREFERENCE-ПЕРЕВАГИ--------*/
+
+.preference {
+    @media screen and (max-width:1199px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+}
+    @media screen and (min-width: 1200px) {
+        padding-top: 93px;
+        padding-bottom: 90px;
+    }
+}
+.preference-list {
+    @media screen and (min-width:768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.preference-list .item {
+    @media screen and (min-width: 768px) {
+    width: 354px;}
+}
+.preference-list .item {
+    @media screen and (max-width: 767px) {
+    text-align: center;
+    }
+}
+.preference-list .item:not(:last-child) {
+    @media screen and (max-width: 767px) {
+    margin-bottom: 30px; }
+}
+.preference-list .item:not(:nth-child(2n)) {
+    @media screen and (min-width:768px) and (max-width:1199px){
+    margin-right: 30px;}
+}
+.preference-list .item:nth-child(-n + 2) {
+    @media screen and (min-width:768px) and (max-width:1199px){
+    margin-bottom: 30px;}
+}
+.preference-list .item {
+    @media screen and (min-width:1200px) {
+        width: 270px;
+    }
+}
+.preference-list .item:not(:last-child) {
+    @media screen and (min-width:1200px) {
+    margin-right: 30px;}
+}
+
+.preference-list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin-bottom: 30px;
+    background-color: #F5F4FA;
+    border-radius: 4px;
+}
+
+
+.preference-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+}
+
+.preference-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.70;
+    color: var(--secondary-text-color);
+    letter-spacing: 0.03em;
+    margin: 0;
+}

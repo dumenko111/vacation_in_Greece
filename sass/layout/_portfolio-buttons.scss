@@ -1,0 +1,49 @@
+/*------PORTFOLIO---------*/
+/*=======BUTTONS==========*/
+.radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media screen and (min-width:768px){
+        padding-bottom: 30px; }
+}
+.radio> .item {
+    @media screen and (max-width:767px) {
+        margin: 5px;
+    }
+}
+@media screen and (min-width:768px){
+.radio>.item:not(:last-child) {
+    margin-right: 8px;}
+}
+
+.radio .btn {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.60;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #212121;
+    text-decoration: none;
+    background: #F5F4FA;
+    border-radius: 4px;
+    padding: 6px 22px;
+    border: none;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.radio .btn:hover,
+.radio .btn:focus {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+}
