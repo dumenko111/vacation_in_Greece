@@ -1,13 +1,16 @@
 /*------PREFERENCE-ПЕРЕВАГИ--------*/
+.job-title {
+    padding-bottom: 20px;
+}
 
 .preference {
     @media screen and (max-width:1199px) {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 40px;
+        padding-bottom: 40px;
 }
     @media screen and (min-width: 1200px) {
-        padding-top: 93px;
-        padding-bottom: 90px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
 .preference-list {
