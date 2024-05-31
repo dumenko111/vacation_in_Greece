@@ -11,6 +11,43 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.min.css">
   <title>Vacation in Greece</title>
+  <style>
+     .custom-heading {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 1.0em;
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    letter-spacing: 0.5;
+  }
+
+  .custom-heading::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+    margin: 10px auto;
+  }
+
+  .custom-heading::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #3498db;
+    margin: 10px auto;
+  }
+
+  .custom-heading span {
+    background: #ecf0f1;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+  }
+  </style>
 </head>
 
 <body>
@@ -82,7 +119,7 @@
     <!--секція переваги-->
     <section class="preference">
       <div class="container">
-        <h2 class="job-title">У самому серці Греції, Коринфська затока манить теплом своїх вод, спокоєм пляжів і захоплюючою красою навколишніх гір. Відвідайте це чудове місце для спокійного відпочинку, насолоджуйтесь плаванням у кришталево чистій воді та захоплюючими сонячними заходами</h2>
+        <h2 class="job-title custom-heading">У самому серці Греції, Коринфська затока манить теплом своїх вод, спокоєм пляжів і захоплюючою красою навколишніх гір. Відвідайте це чудове місце для спокійного відпочинку, насолоджуйтесь плаванням у кришталево чистій воді та захоплюючими сонячними заходами</h2>
         <ul class="preference-list">
 
           <li class="item antena">
@@ -143,7 +180,8 @@
         </ul>
       </div>
     </section>
-      <div class="container">
+
+      <!-- <div class="container">
         <h3 class="clients-title">Постійні клієнти</h3>
         <ul class="clients-list">
           <li class="item-clients"><a href="" class="clients-link">
@@ -177,7 +215,7 @@
               </svg></a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </section> -->
   </main>
 
