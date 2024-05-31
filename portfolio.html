@@ -11,365 +11,226 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.min.css">
   <title>WEB Studio</title>
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      width: calc(33.333% - 10px);
+      cursor: pointer;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      z-index: 1000;
+      /* left: 0; */
+      /* top: 0; */
+      width: 90%;
+      /* height: 90%; */
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal.is-hidden {
+      display: none;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* .caption {
+      margin-top: 10px;
+      color: #ccc;
+      font-size: 20px;
+      text-align: center;
+    } */
+
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .modal-nav button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .prev {
+      margin-left: 10px;
+    }
+
+    .next {
+      margin-right: 10px;
+    }
+  </style>
 </head>
 
 <body>
-
-
-
-  <!--HEADER-->
   <header class="header header-line">
     <div class="head container">
       <div class="logo-wrapper">
-        <a class="logo" href="./index.html"><span class="logo-blue">Web </span>Studio</a>
-        <!--БУРГЕР---МЕНЮ----->
-        <button
-            type="button"
-            class="menu-button"
-            aria-expanded="false"
-            aria-controls="menu-container"
-            data-menu-button
-          >
-            <svg
-              width="40"
-              height="40"
-              aria-label="Перемикач мобільного меню"
-            >
-              <use class="icon-cross" href="./icons/menu_icon/symbol-defs.svg#icon-close_40px"></use>
-              <use class="icon-menu" href="./icons/menu_icon/symbol-defs.svg#icon-menu_40px"></use>
-            </svg>
-          </button>
+        <a class="logo" href="./index.html"><span class="logo-blue">Your </span>Vacation</a>
+        <button type="button" class="menu-button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+          <svg width="40" height="40" aria-label="Перемикач мобільного меню">
+            <use class="icon-cross" href="./icons/menu_icon/symbol-defs.svg#icon-close_40px"></use>
+            <use class="icon-menu" href="./icons/menu_icon/symbol-defs.svg#icon-menu_40px"></use>
+          </svg>
+        </button>
       </div>
-  
-          <nav class="nav" id="menu-container" data-menu>
-            <ul class="nav-list">
-              <li class="item"><a class="nav-link" href="./index.html">Студія</a></li>
-              <li class="item"><a class="nav-link current" href="./portfolio.html">Портфоліо</a></li>
-              <li class="item"><a class="nav-link" href="">Контакти</a></li>
-            </ul>
-          
-          <address class="header-address">
-            <ul class="address-list">
-              <li class="item">
-                <a class="address-link" href="mailto:info@devstudio.com">
-                  <svg class="address-list-icon" width="16" height="12">
-                    <use href="./icons/symbol-defs (1).svg#iconenvelope"></use>
-                  </svg>info@devstudio.com</a>
-              </li>
-  
-              <li class="item">
-                <a class="address-link" href="tel:+380961111111">
-                  <svg class="address-list-icon" width="10" height="15">
-                    <use href="./icons/symbol-defs (1).svg#iconsmartphone"></use>
-                  </svg>+38 096 111 11 11</a>
-              </li>
-            </ul>
-          </address>
-        </nav>
-    </div>
-    
-      
-  </header>
-
-
-
-
-  <!--MAIN-->
-  <div class="container">
-    <!--BUTTONS-->
-    <main>
-      <ul class="radio">
-        <li class="item"><button class="btn" type="button">Всі</button></li>
-        <li class="item"><button class="btn" type="button">Веб-сайти</button></li>
-        <li class="item"><button class="btn" type="button">Програми</button></li>
-        <li class="item"><button class="btn" type="button">Дизайн</button></li>
-        <li class="item"><button class="btn" type="button">Маркетинг</button></li>
-      </ul>
-
-
-
-
-      <section class="main-page">
-        <ul class="main-list">
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk1.jpg 1x,
-                  ./images/portfolio/desktop/img_desk1@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab1.jpg 1x,
-                  ./images/portfolio/tablet/img_tab1@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob1.jpg 1x,
-                  ./images/portfolio/mobile/img_mob1@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk1@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Технокряк </p>
-                <p class="item-text">Веб-сайт</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk2.jpg 1x,
-                  ./images/portfolio/desktop/img_desk2@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab2.jpg 1x,
-                  ./images/portfolio/tablet/img_tab2@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob2.jpg 1x,
-                  ./images/portfolio/mobile/img_mob2@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk2@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Постер New Orlean vs Golden Star </p>
-                <p class="item-text">Дизайн</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk3.jpg 1x,
-                  ./images/portfolio/desktop/img_desk3@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab3.jpg 1x,
-                  ./images/portfolio/tablet/img_tab3@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob3.jpg 1x,
-                  ./images/portfolio/mobile/img_mob3@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk3@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Ресторан Seafood </p>
-                <p class="item-text">Додаток</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk4.jpg 1x,
-                  ./images/portfolio/desktop/img_desk4@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab4.jpg 1x,
-                  ./images/portfolio/tablet/img_tab4@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob4.jpg 1x,
-                  ./images/portfolio/mobile/img_mob4@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk4@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Проєкт Prime </p>
-                <p class="item-text">Маркетинг</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk5.jpg 1x,
-                  ./images/portfolio/desktop/img_desk5@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab5.jpg 1x,
-                  ./images/portfolio/tablet/img_tab5@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob5.jpg 1x,
-                  ./images/portfolio/mobile/img_mob5@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk5@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Проєкт Boxes </p>
-                <p class="item-text">Додаток</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk6.jpg 1x,
-                  ./images/portfolio/desktop/img_desk6@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab6.jpg 1x,
-                  ./images/portfolio/tablet/img_tab6@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob6.jpg 1x,
-                  ./images/portfolio/mobile/img_mob6@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk6@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Inspiration has no Borders </p>
-                <p class="item-text">Веб-сайт</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk7.jpg 1x,
-                  ./images/portfolio/desktop/img_desk7@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab7.jpg 1x,
-                  ./images/portfolio/tablet/img_tab7@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob7.jpg 1x,
-                  ./images/portfolio/mobile/img_mob7@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk7@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Видавництво Limited Edition </p>
-                <p class="item-text">Сайт</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk8.jpg 1x,
-                  ./images/portfolio/desktop/img_desk8@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab8.jpg 1x,
-                  ./images/portfolio/tablet/img_tab8@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob8.jpg 1x,
-                  ./images/portfolio/mobile/img_mob8@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk8@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Проєкт LAB </p>
-                <p class="item-text">Маркетинг</p>
-              </div>
-            </a></li>
-          <li class="main-item"><a href="" class="link">
-              <div class="wrapper-img">
-                <picture>
-                  <source
-                  srcset="./images/portfolio/desktop/img_desk9.jpg 1x,
-                  ./images/portfolio/desktop/img_desk9@2x.jpg 2x"
-                  media="(min-width:1200px)">
-                  <source
-                  srcset="./images/portfolio/tablet/img_tab9.jpg 1x,
-                  ./images/portfolio/tablet/img_tab9@2x.jpg 2x"
-                  media="(min-width: 768px)">
-                  <source
-                  srcset="./images/portfolio/mobile/img_mob9.jpg 1x,
-                  ./images/portfolio/mobile/img_mob9@2x.jpg 2x"
-                  media="(max-width: 767px)">
-                  <img src="./images/portfolio/desktop/img_desk9@2x.jpg" alt="Технокряк"
-                  width="450" height="294">
-                </picture>
-                <p class="text-hidden">Технокряк це сучасний майданчик поширення коронавірусу. Компанії використовують
-                  цю платформу для цифрового шпигунства та
-                  атак на захищені сервери конкурентів.</p>
-              </div>
-              <div class="gallery-text">
-                <p class="main-text">Growing Business </p>
-                <p class="item-text">Додаток</p>
-              </div>
-            </a></li>
+      <nav class="nav" id="menu-container" data-menu>
+        <ul class="nav-list">
+          <li class="item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="item"><a class="nav-link current" href="./portfolio.html">Room</a></li>
+          <li class="item"><a class="nav-link" href="">Nature</a></li>
+          <li class="item"><a class="nav-link" href="">Food</a></li>
         </ul>
-      </section>
+        <address class="header-address">
+          <ul class="address-list">
+            <li class="item">
+              <a class="address-link" href="mailto:info@vacation.com">
+                <svg class="address-list-icon" width="16" height="12">
+                  <use href="./icons/symbol-defs (1).svg#iconenvelope"></use>
+                </svg>info@vacation.com</a>
+            </li>
+            <li class="item">
+              <a class="address-link" href="tel:+306955186477">
+                <svg class="address-list-icon" width="10" height="15">
+                  <use href="./icons/symbol-defs (1).svg#iconsmartphone"></use>
+                </svg>+306955186477</a>
+            </li>
+          </ul>
+        </address>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+
+
+    <main>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_1.jpg" alt="" class="gallery-img" data-full="./images/room/room_1.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_2.jpg" alt="" class="gallery-img" data-full="./images/room/room_2.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_3.jpg" alt="" class="gallery-img" data-full="./images/room/room_3.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_4.jpg" alt="" class="gallery-img" data-full="./images/room/room_4.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_5.jpg" alt="" class="gallery-img" data-full="./images/room/room_5.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_6.jpg" alt="" class="gallery-img" data-full="./images/room/room_6.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_7.jpg" alt="" class="gallery-img" data-full="./images/room/room_7.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_8.jpg" alt="" class="gallery-img" data-full="./images/room/room_8.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_9.jpg" alt="" class="gallery-img" data-full="./images/room/room_9.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_10.jpg" alt="" class="gallery-img" data-full="./images/room/room_10.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_11.jpg" alt="" class="gallery-img" data-full="./images/room/room_11.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_12.jpg" alt="" class="gallery-img" data-full="./images/room/room_12.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_13.jpg" alt="" class="gallery-img" data-full="./images/room/room_13.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_14.jpg" alt="" class="gallery-img" data-full="./images/room/room_14.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_15.jpg" alt="" class="gallery-img" data-full="./images/room/room_15.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_16.jpg" alt="" class="gallery-img" data-full="./images/room/room_16.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_17.jpg" alt="" class="gallery-img" data-full="./images/room/room_17.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_18.jpg" alt="" class="gallery-img" data-full="./images/room/room_18.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_19.jpg" alt="" class="gallery-img" data-full="./images/room/room_19.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_20.jpg" alt="" class="gallery-img" data-full="./images/room/room_20.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/room/room_21.jpg" alt="" class="gallery-img" data-full="./images/room/room_21.jpg">
+        </div>
+      </div>
+      <div class="modal is-hidden" id="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Modal Image">
+        <div class="caption" id="caption"></div>
+        <div class="modal-nav">
+          <button class="prev" id="prevBtn">&#10094;</button>
+          <button class="next" id="nextBtn">&#10095;</button>
+        </div>
+      </div>
     </main>
   </div>
 
 
-
-
-
   <footer class="footer">
     <div class="container footer-wrapper">
-
-      <!--wrapper for logo and address-->
       <div class="logo-address-wrap">
-        <!--footer-logo-->
-      <div class="footer-logo-wrapper">
-        <a class="footer-logo" href="./index.html"><span class="logo-blue">Web </span><span
-          class="logo-white"> Studio</span></a>
+        <div class="footer-logo-wrapper">
+          <a class="footer-logo" href="./index.html"><span class="logo-blue">Web </span><span class="logo-white">
+              Studio</span></a>
+        </div>
+        <div class="address-wrapper">
+          <address class="footer-address">
+            <p class="address-text">м. Київ, пр-т Лесі Українки, 26</p>
+            <a class="item mail" href="mailto:info@devstudio.com">info@example.com</a>
+            <a class="item" href="tel:+380991111111">+38 067 111 11 11</a>
+          </address>
+        </div>
       </div>
-      
-      <!--address-->
-      <div class="address-wrapper">
-        <address class="footer-address">
-          <p class="address-text">м. Київ, пр-т Лесі Українки, 26</p>
-          <a class="item mail" href="mailto:info@devstudio.com">info@example.com</a>
-          <a class="item" href="tel:+380991111111">+38 067 111 11 11</a>
-        </address>
-      </div>
-      
-      </div>
-
-    <!--join-social-->
       <div class="join-social">
         <p class="join-title">ПРИЄДНУЙТЕСЯ</p>
         <ul class="join-list">
@@ -392,8 +253,6 @@
               </svg></a></li>
         </ul>
       </div>
-
-      <!--subscribe-->
       <div class="subscribe">
         <b class="subscribe-title">ПІДПИШІТЬСЯ НА РОЗСИЛКУ</b>
         <div class="subscribe-wrapper">
@@ -405,13 +264,58 @@
             </svg></button>
         </div>
       </div>
-
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImg');
+      const caption = document.getElementById('caption');
+      const closeModal = document.getElementById('closeModal');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
+      let currentIndex;
 
+      galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('.gallery-img');
+          modalImg.src = img.dataset.full;
+          caption.innerText = img.alt;
+          modal.classList.remove('is-hidden');
+          currentIndex = index;
+        });
+      });
 
-<script>
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('is-hidden');
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? galleryItems.length - 1 : currentIndex - 1;
+        updateModalImage();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === galleryItems.length - 1) ? 0 : currentIndex + 1;
+        updateModalImage();
+      });
+
+      function updateModalImage() {
+        const img = galleryItems[currentIndex].querySelector('.gallery-img');
+        modalImg.src = img.dataset.full;
+        caption.innerText = img.alt;
+      }
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.add('is-hidden');
+        }
+      });
+    });
+  </script>
+  <script>
     const refs = {
       openModalBtn: document.querySelector("[data-open-modal]"),
       closeModalBtn: document.querySelector("[data-close-modal]"),
@@ -431,11 +335,7 @@
       console.log("Это клик в бекдроп");
     }
   </script>
-
   <script src="./js/menu.js"></script>
-
-
-
 </body>
 
 </html>
