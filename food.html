@@ -11,90 +11,90 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.min.css">
   <title>Your Vacation</title>
-  <style>
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-    .gallery-item {
-      width: calc(33.333% - 10px);
-      cursor: pointer;
-    }
+  .gallery-item {
+    width: calc(33.333% - 10px);
+    cursor: pointer;
+  }
 
-    .gallery-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-    .modal {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      z-index: 1000;
-      /* left: 0; */
-      /* top: 0; */
-      width: 95%;
-      height: auto;
-      overflow: auto;
-      margin-top: -190px;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    /* left: 0; */
+    /* top: 0; */
+    width: 95%;
+    height: auto;
+    overflow: auto;
+    margin-top: -190px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 
-    .modal.is-hidden {
-      display: none;
-    }
+  .modal.is-hidden {
+    display: none;
+  }
 
-    .modal-content {
-      max-width: 90%;
-      max-height: 80%;
-    }
+  .modal-content {
+    max-width: 110%;
+    max-height: 90%;
+  }
 
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: white;
-      font-size: 35px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  .close {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-    /* .caption {
+  /* .caption {
       margin-top: 10px;
       color: #ccc;
       font-size: 20px;
       text-align: center;
     } */
 
-    .modal-nav {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
 
-    .modal-nav button {
-      background-color: transparent;
-      border: none;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-    }
+  .modal-nav button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
 
-    .prev {
-      margin-left: 10px;
-    }
+  .prev {
+    margin-left: 10px;
+  }
 
-    .next {
-      margin-right: 10px;
-    }
-  </style>
+  .next {
+    margin-right: 10px;
+  }
+</style>
 </head>
 
 <body>
