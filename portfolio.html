@@ -37,9 +37,10 @@
       z-index: 1000;
       /* left: 0; */
       /* top: 0; */
-      width: 90%;
-      /* height: 90%; */
+      width: 95%;
+      height: auto;
       overflow: auto;
+      margin-top: -190px;
       background-color: rgba(0, 0, 0, 0.8);
     }
 
@@ -110,10 +111,10 @@
       </div>
       <nav class="nav" id="menu-container" data-menu>
         <ul class="nav-list">
-          <li class="item"><a class="nav-link" href="./index.html">Home</a></li>
-          <li class="item"><a class="nav-link current" href="./portfolio.html">Room</a></li>
-          <li class="item"><a class="nav-link" href="">Nature</a></li>
-          <li class="item"><a class="nav-link" href="">Food</a></li>
+          <li class="item"><a class="nav-link" href="./index.html">Головна</a></li>
+          <li class="item"><a class="nav-link current" href="./portfolio.html">Номери</a></li>
+          <li class="item"><a class="nav-link" href="./nature.html">Природа</a></li>
+          <li class="item"><a class="nav-link" href="./food.html">Кухня</a></li>
         </ul>
         <address class="header-address">
           <ul class="address-list">
@@ -143,10 +144,10 @@
           <img width="450" height="294" src="./images/room/room_1.jpg" alt="" class="gallery-img" data-full="./images/room/room_1.jpg">
         </div>
         <div class="gallery-item">
-          <img width="450" height="294" src="./images/room/room_2.jpg" alt="" class="gallery-img" data-full="./images/room/room_2.jpg">
+          <img width="450" height="294" src="./images/room/room_20.jpg" alt="" class="gallery-img" data-full="./images/room/room_21.jpg">
         </div>
         <div class="gallery-item">
-          <img width="450" height="294" src="./images/room/room_3.jpg" alt="" class="gallery-img" data-full="./images/room/room_3.jpg">
+          <img width="450" height="294" src="./images/room/room_22.jpg" alt="" class="gallery-img" data-full="./images/room/room_22.jpg">
         </div>
         <div class="gallery-item">
           <img width="450" height="294" src="./images/room/room_4.jpg" alt="" class="gallery-img" data-full="./images/room/room_4.jpg">
@@ -196,12 +197,6 @@
         <div class="gallery-item">
           <img width="450" height="294" src="./images/room/room_19.jpg" alt="" class="gallery-img" data-full="./images/room/room_19.jpg">
         </div>
-        <div class="gallery-item">
-          <img width="450" height="294" src="./images/room/room_20.jpg" alt="" class="gallery-img" data-full="./images/room/room_20.jpg">
-        </div>
-        <div class="gallery-item">
-          <img width="450" height="294" src="./images/room/room_21.jpg" alt="" class="gallery-img" data-full="./images/room/room_21.jpg">
-        </div>
       </div>
       <div class="modal is-hidden" id="modal">
         <span class="close" id="closeModal">&times;</span>
@@ -242,38 +237,39 @@
       <div class="join-social">
         <p class="join-title">ПРИЄДНУЙТЕСЯ</p>
         <ul class="join-list">
-          <li class="item"><a class="social-link" aria-label="instagram" href="https://www.instagram.com/">
-              <svg class="join-icon" width="20" height="20">
-                <use href="./icons/symbol-defs (1).svg#iconinstagram"></use>
-              </svg></a></li>
-          <li class="item"><a class="social-link" aria-label="twitter" href="https://twitter.com/?lang=uk">
-              <svg class="join-icon" width="20" height="20">
-                <use href="./icons/symbol-defs (1).svg#icontwitter"></use>
-              </svg></a></li>
-          <li class="item"><a class="social-link" aria-label="facebook" href="https://www.facebook.com/">
+          <!-- <li class="item"><a class="social-link" aria-label="instagram" href="https://www.instagram.com/">
+                <svg class="join-icon" width="20" height="20">
+                  <use href="./icons/symbol-defs (1).svg#iconinstagram"></use>
+                </svg></a></li> -->
+          <!-- <li class="item"><a class="social-link" aria-label="twitter" href="https://twitter.com/?lang=uk">
+                <svg class="join-icon" width="20" height="20">
+                  <use href="./icons/symbol-defs (1).svg#icontwitter"></use>
+                </svg></a></li> -->
+          <li class="item"><a class="social-link" aria-label="facebook"
+              href="https://www.facebook.com/profile.php?id=100023993884300">
               <svg class="join-icon" width="20" height="20">
                 <use href="./icons/symbol-defs (1).svg#iconfacebook"></use>
               </svg></a></li>
-          <li class="item"><a class="social-link" aria-label="linkedin"
-              href="https://www.linkedin.com/feed/?trk=nav_logo">
-              <svg class="join-icon" width="20" height="20">
-                <use href="./icons/symbol-defs (1).svg#iconlinkedin"></use>
-              </svg></a></li>
+          <!-- <li class="item"><a class="social-link" aria-label="linkedin"
+                href="https://www.linkedin.com/feed/?trk=nav_logo">
+                <svg class="join-icon" width="20" height="20">
+                  <use href="./icons/symbol-defs (1).svg#iconlinkedin"></use>
+                </svg></a></li> -->
         </ul>
       </div>
   
       <!--subscribe-->
-      <div class="subscribe">
-        <b class="subscribe-title">ПІДПИШІТЬСЯ НА РОЗСИЛКУ</b>
-        <div class="subscribe-wrapper">
-          <input type="email" class="subscribe-input" placeholder="  E-mail">
-          <button class="subscribe-button" type="button">
-            <span class="subscribe-button-text">Підписатися</span>
-            <svg class="subscribe-plane" width="24" height="24">
-              <use href="./icons/symbol-defs (1).svg#iconicon-send"></use>
-            </svg></button>
-        </div>
-      </div>
+      <!-- <div class="subscribe">
+          <b class="subscribe-title">ПІДПИШІТЬСЯ НА РОЗСИЛКУ</b>
+          <div class="subscribe-wrapper">
+            <input type="email" class="subscribe-input" placeholder="  E-mail">
+            <button class="subscribe-button" type="button">
+              <span class="subscribe-button-text">Підписатися</span>
+              <svg class="subscribe-plane" width="24" height="24">
+                <use href="./icons/symbol-defs (1).svg#iconicon-send"></use>
+              </svg></button>
+          </div>
+        </div> -->
   
     </div>
   </footer>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.min.css">
+  <title>Your Vacation</title>
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      width: calc(33.333% - 10px);
+      cursor: pointer;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      z-index: 1000;
+      /* left: 0; */
+      /* top: 0; */
+      width: 95%;
+      height: auto;
+      overflow: auto;
+      margin-top: -190px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal.is-hidden {
+      display: none;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* .caption {
+      margin-top: 10px;
+      color: #ccc;
+      font-size: 20px;
+      text-align: center;
+    } */
+
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .modal-nav button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .prev {
+      margin-left: 10px;
+    }
+
+    .next {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header header-line">
+    <div class="head container">
+      <div class="logo-wrapper">
+        <a class="logo" href="./index.html"><span class="logo-blue">Your </span>Vacation</a>
+        <button type="button" class="menu-button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+          <svg width="40" height="40" aria-label="Перемикач мобільного меню">
+            <use class="icon-cross" href="./icons/menu_icon/symbol-defs.svg#icon-close_40px"></use>
+            <use class="icon-menu" href="./icons/menu_icon/symbol-defs.svg#icon-menu_40px"></use>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav" id="menu-container" data-menu>
+        <ul class="nav-list">
+          <li class="item"><a class="nav-link" href="./index.html">Головна</a></li>
+          <li class="item"><a class="nav-link" href="./portfolio.html">Номери</a></li>
+          <li class="item"><a class="nav-link" href="./nature.html">Природа</a></li>
+          <li class="item"><a class="nav-link current" href="./food.html">Кухня</a></li>
+        </ul>
+        <address class="header-address">
+          <ul class="address-list">
+            <li class="item">
+              <a class="address-link" href="mailto:info@vacation.com">
+                <svg class="address-list-icon" width="16" height="12">
+                  <use href="./icons/symbol-defs (1).svg#iconenvelope"></use>
+                </svg>info@vacation.com</a>
+            </li>
+            <li class="item">
+              <a class="address-link" href="tel:+306955186477">
+                <svg class="address-list-icon" width="10" height="15">
+                  <use href="./icons/symbol-defs (1).svg#iconsmartphone"></use>
+                </svg>+306955186477</a>
+            </li>
+          </ul>
+        </address>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+
+
+    <main>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/food/1.jpg" alt="" class="gallery-img"
+            data-full="./images/food/1.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/food/2.jpg" alt="" class="gallery-img"
+            data-full="./images/food/2.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/food/3.jpg" alt="" class="gallery-img"
+            data-full="./images/food/3.jpg">
+        </div>
+        <div class="gallery-item">
+          <img width="450" height="294" src="./images/food/4.jpg" alt="" class="gallery-img"
+            data-full="./images/food/4.jpg">
+        </div>
+       
+        </div>
+      </div>
+      <div class="modal is-hidden" id="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Modal Image">
+        <div class="caption" id="caption"></div>
+        <div class="modal-nav">
+          <button class="prev" id="prevBtn">&#10094;</button>
+          <button class="next" id="nextBtn">&#10095;</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container footer-wrapper">
+
+      <!--wrapper for logo and address-->
+      <div class="logo-address-wrap">
+        <!--footer-logo-->
+        <div class="footer-logo-wrapper">
+          <a class="footer-logo" href="./index.html"><span class="logo-blue">Your </span><span class="logo-white">
+              Vacation</span></a>
+        </div>
+
+        <!--address-->
+        <div class="address-wrapper">
+          <address class="footer-address">
+            <p class="address-text">Limni Vouliagmeni, Loutraki-Perachora 203 00</p>
+            <a class="item mail" href="mailto:info@devstudio.com">info@example.com</a>
+            <a class="item" href="tel:+306955186477">+30 695 518 64 77</a>
+          </address>
+        </div>
+
+      </div>
+
+      <!--join-social-->
+      <div class="join-social">
+        <p class="join-title">ПРИЄДНУЙТЕСЯ</p>
+        <ul class="join-list">
+          <!-- <li class="item"><a class="social-link" aria-label="instagram" href="https://www.instagram.com/">
+                <svg class="join-icon" width="20" height="20">
+                  <use href="./icons/symbol-defs (1).svg#iconinstagram"></use>
+                </svg></a></li> -->
+          <!-- <li class="item"><a class="social-link" aria-label="twitter" href="https://twitter.com/?lang=uk">
+                <svg class="join-icon" width="20" height="20">
+                  <use href="./icons/symbol-defs (1).svg#icontwitter"></use>
+                </svg></a></li> -->
+          <li class="item"><a class="social-link" aria-label="facebook"
+              href="https://www.facebook.com/profile.php?id=100023993884300">
+              <svg class="join-icon" width="20" height="20">
+                <use href="./icons/symbol-defs (1).svg#iconfacebook"></use>
+              </svg></a></li>
+          <!-- <li class="item"><a class="social-link" aria-label="linkedin"
+                href="https://www.linkedin.com/feed/?trk=nav_logo">
+                <svg class="join-icon" width="20" height="20">
+                  <use href="./icons/symbol-defs (1).svg#iconlinkedin"></use>
+                </svg></a></li> -->
+        </ul>
+      </div>
+
+      <!--subscribe-->
+      <!-- <div class="subscribe">
+          <b class="subscribe-title">ПІДПИШІТЬСЯ НА РОЗСИЛКУ</b>
+          <div class="subscribe-wrapper">
+            <input type="email" class="subscribe-input" placeholder="  E-mail">
+            <button class="subscribe-button" type="button">
+              <span class="subscribe-button-text">Підписатися</span>
+              <svg class="subscribe-plane" width="24" height="24">
+                <use href="./icons/symbol-defs (1).svg#iconicon-send"></use>
+              </svg></button>
+          </div>
+        </div> -->
+
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImg');
+      const caption = document.getElementById('caption');
+      const closeModal = document.getElementById('closeModal');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      let currentIndex;
+
+      galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('.gallery-img');
+          modalImg.src = img.dataset.full;
+          caption.innerText = img.alt;
+          modal.classList.remove('is-hidden');
+          currentIndex = index;
+        });
+      });
+
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('is-hidden');
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? galleryItems.length - 1 : currentIndex - 1;
+        updateModalImage();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === galleryItems.length - 1) ? 0 : currentIndex + 1;
+        updateModalImage();
+      });
+
+      function updateModalImage() {
+        const img = galleryItems[currentIndex].querySelector('.gallery-img');
+        modalImg.src = img.dataset.full;
+        caption.innerText = img.alt;
+      }
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.add('is-hidden');
+        }
+      });
+    });
+  </script>
+  <script>
+    const refs = {
+      openModalBtn: document.querySelector("[data-open-modal]"),
+      closeModalBtn: document.querySelector("[data-close-modal]"),
+      backdrop: document.querySelector("[data-backdrop]"),
+    };
+
+    refs.openModalBtn.addEventListener("click", toggleModal);
+    refs.closeModalBtn.addEventListener("click", toggleModal);
+
+    refs.backdrop.addEventListener("click", logBackdropClick);
+
+    function toggleModal() {
+      refs.backdrop.classList.toggle("is-hidden");
+    }
+
+    function logBackdropClick() {
+      console.log("Это клик в бекдроп");
+    }
+  </script>
+  <script src="./js/menu.js"></script>
+</body>
+
+</html>
